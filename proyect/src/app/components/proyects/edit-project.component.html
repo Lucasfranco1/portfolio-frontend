@@ -1,0 +1,33 @@
+<div class="container" *ngIf="project">    
+    <h3 style="text-align:center; color: #e2e2e2;">Editar Proyecto: {{project.nameProject}}</h3>
+    <p style="text-align:center; color: #e2e2e2;">{{project.descriptionProject}}</p>
+    <div style="display: flex; justify-content: center;">
+        <img src="{{project.imageProject}}" alt="" style="max-width: 150px">
+    </div>
+    
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nameProject" class="form-label">Nombre del Proyecto</label>
+                    <input type="text" class="form-control" id="nameProject" name="nameProject" [(ngModel)]="project.nameProject" required>                    
+                </div>     
+                <div class="form-group">
+                    <label for="descriptionProject" class="form-label">Descripción del Proyecto</label>
+                    <input type="text" class="form-control" id="descriptionProject" name="descriptionProject" [(ngModel)]="project.descriptionProject" required>                    
+                </div>     
+                <div class="form-group">
+                    <label for="urlProject" class="form-label">URL del Proyecto</label>
+                    <input type="text" class="form-control" id="urlProject" name="urlProject" [(ngModel)]="project.urlProject" required>                    
+                </div>                                                  
+                <div class="form-group">
+                    <label for="imageProject" class="form-label">URL logo de Proyecto</label>
+                    <input type="text" class="form-control" id="imageProject" name="imageProject" [(ngModel)]="project.imageProject">                    
+                </div>
+                <br>
+                <button class="btn btn-danger" style="margin-right:15px;" (click)="cancel()">Cancelar</button> 
+                <button class="btn btn-primary">Editar Proyecto</button>
+            </form>
+        </div>
+    </div>
+</div>

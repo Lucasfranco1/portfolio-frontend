@@ -1,0 +1,14 @@
+.container{
+    border-top: 4px solid #151934;
+    border-radius: 26px;
+    padding-bottom: 15px;
+    margin-top: 5.6rem;
+    background-color: #151934;
+}
+label{
+    color: #e2e2e2;
+}
+
+input{
+    color: #151934;
+}

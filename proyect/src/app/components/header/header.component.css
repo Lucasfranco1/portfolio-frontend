@@ -1,0 +1,22 @@
+.header .logo-container{
+    background-color: #151934;
+    width: 100%;        
+}
+
+app-social-red{
+    float: right;
+    margin-top: 25px;
+}
+
+@media (max-width:430px) {
+     app-social-red{        
+        margin-top: -65px;        
+    } 
+    
+}
+@media (max-width:375px) {
+    app-social-red{        
+       margin-top: 25px;        
+   } 
+   
+}

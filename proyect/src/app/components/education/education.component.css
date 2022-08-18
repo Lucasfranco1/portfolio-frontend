@@ -1,0 +1,37 @@
+.row{
+    padding: 50px;
+
+}
+div{
+    background: #e2e2e2;
+    color: #151934;
+}
+ul{
+    background-color: #151934;
+    color:#fdf1ff;
+    border-radius: 20px;
+    list-style: none
+}
+h2,h3{
+    display: inline;
+}
+#img{
+    box-shadow: 10px 10px 30px #151934;
+    margin-bottom: 11px; 
+    padding-right: 5px;
+    width: 30px;  
+    height: 20px;    
+    transition: .5s;
+}
+#img:hover{
+    transform: scale(1.1);
+}
+i:hover{
+    font-size: 15px;
+}
+@media (max-width: 576px) {
+    #img{
+       margin-left: 0px;
+    }    
+    
+}

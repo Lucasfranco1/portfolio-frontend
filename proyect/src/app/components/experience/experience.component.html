@@ -1,0 +1,45 @@
+<div class="row">
+  <h1 id="Experience">Experiencia Laboral</h1>
+  <div class="col-lg-2">
+    <a routerLink="/new_experience" *ngIf="isLogged && isAdmin"
+      ><i class="bi bi-plus-square-fill" style="font-size: 2rem"></i
+    ></a>
+  </div>
+
+  <div class="col-lg-12">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let workExperience of workExperiences">
+          <ul id="block-experience">
+            <td>
+              <li>
+                <img
+                  src="{{ workExperience.logoBusinessUrl }}"
+                  alt=""
+                  class="img-fluid"
+                  id="img"
+                />
+                <h2>{{ workExperience.work }}</h2>
+                -
+                <h3>{{ workExperience.year }}</h3>
+              </li>
+              <p>{{ workExperience.descriptionWork }}</p>
+            </td>
+            <td *ngIf="isLogged && isAdmin">
+              <a routerLink="/edit_experience/{{ workExperience.id }}"
+                ><i class="bi bi-pen-fill" style="color: #fff"></i
+              ></a>
+            </td>
+            <td *ngIf="isLogged && isAdmin">
+              <i
+                class="bi bi-trash-fill"
+                style="color: #fff; cursor: pointer"
+                (click)="delete(workExperience.id)"
+              ></i>
+            </td>
+          </ul>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

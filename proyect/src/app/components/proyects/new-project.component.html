@@ -1,0 +1,29 @@
+<div class="container">
+    <h3 style="text-align:center; color: #e2e2e2;">Nuevo Proyecto</h3>
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="newNameProject" class="form-label">Nombre del Proyecto</label>
+                    <input type="text" class="form-control" id="newNameProject" name="newNameProject" [(ngModel)]="newNameProject" required>                    
+                </div>
+                <br>   
+                <div class="form-group">
+                    <label for="newDescriptionProject" class="form-label">Descripción del Proyecto</label>
+                    <input type="text" class="form-control" id="newDescriptionProject" name="newDescriptionProject" [(ngModel)]="newDescriptionProject" required>                    
+                </div>
+                <div class="form-group">
+                    <label for="newUrlProject" class="form-label">URL del Proyecto</label>
+                    <input type="text" class="form-control" id="newUrlProject" name="newUrlProject" [(ngModel)]="newUrlProject" required>                    
+                </div>                        
+                <div class="form-group">
+                    <label for="newImageProject" class="form-label">URL Imagen del Proyecto</label>
+                    <input type="text" class="form-control" id="newImageProject" name="newImageProject" [(ngModel)]="newImageProject">                    
+                </div>
+                <br>
+                <button class="btn btn-danger" style="margin-right:15px;" (click)="cancel()">Cancelar</button> 
+                <button class="btn btn-primary">Añadir Skill</button>
+            </form>
+        </div>
+    </div>    
+</div>

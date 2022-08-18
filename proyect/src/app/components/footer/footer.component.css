@@ -1,0 +1,14 @@
+.row{
+    background: #151934;
+    
+}
+
+footer{
+    margin: 10px;
+    color: #fdf1ff;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 5px -5px 1px #151934;
+}

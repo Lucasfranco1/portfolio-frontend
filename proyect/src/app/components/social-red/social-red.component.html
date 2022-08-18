@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="rounded">
+    <div class="social">
+      <ul class="link">      
+        <!-- Adding social red -->
+        <li>
+          <a href="{{ person.gitHubUrl }}" target="_blank"
+            ><i class="lni lni-github-original"></i
+          ></a>
+        </li>
+        <li>
+          <a href="{{ person.linkedinUrl }}" target="_blank"
+            ><i class="lni lni-linkedin-original"></i
+          ></a>
+        </li>
+
+        <!-- Adding button login -->
+        <li style="margin-top: -9px">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="login()"
+            *ngIf="!isLogged"
+          >
+            Ingresar
+          </button>
+        </li>
+        <li style="margin-top: -9px">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="onLogOut()"
+            *ngIf="isLogged"
+          >
+            Salir
+          </button>
+        </li>        
+      </ul>
+    </div>
+  </div>
+</div>

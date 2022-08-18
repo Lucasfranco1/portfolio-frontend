@@ -1,0 +1,23 @@
+
+    <div class="row" >
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" *ngIf="person">            
+            <img src="{{person.image}}" alt="photo" class="img-fluid" id="photo">
+            <i  routerLink="/edit_photo/{{person.id}}" *ngIf="isLogged && isAdmin" class="bi bi-pen-fill" id="photoEdit" style="color: #151934; position: relative; margin-left: 2.5rem; font-size: 20px; cursor: pointer;">Editar Foto de Perfil</i>
+            
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" id="presentation">            
+            <p id="name">{{ person.nameFirst }} {{person.lastName}}</p>            
+            <p id="profession">{{ person.profession }}</p>
+            <a routerLink="/edit_namePerson/{{person.id}}" *ngIf="isLogged && isAdmin"><i class="bi bi-pen-fill" style="color: rgb(85, 81, 81);"></i></a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 animate__animated animate__zoomIn" id="about">
+            <span id="about-me">
+                <a routerLink="/edit_about_me/{{person.id}}" *ngIf="isLogged && isAdmin"><i class="bi bi-pen-fill" style="color: #fff;"></i></a>
+                <h1>Acerca de mí</h1>
+                <p>{{ person.about }}</p>
+            </span>
+            <a href="../../../assets/CV-Lucas-Ariel-Franco-Backend-Java.pdf" download="CV-Lucas-Ariel-Franco-Backend-Java.pdf"><button type="button" class="btn btn-primary">Download CV</button></a>
+        </div>
+    </div>
+

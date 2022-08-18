@@ -1,0 +1,40 @@
+<div class="row">  
+  <h1 id="Skills">Hard & Soft Skills</h1>
+  <div class="col-lg-1">
+    <a routerLink="/new_skill" *ngIf="isLogged && isAdmin"
+      ><i class="bi bi-plus-square-fill" style="font-size: 2rem"></i
+    ></a>
+  </div> 
+  <div></div>
+
+  <!-- HTML -->
+  <div id="skill" class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skills">         
+                <circle-progress
+                  [percent]="skill.percentSkill"
+                  [radius]="90"
+                  title="{{ skill.nameSkill }}"
+                  [titleFontSize]="'30'"
+                  [titleColor]="'#151934'"
+                  [showImage]="true"
+                  imageSrc="{{ skill.imageSkill }}"
+                  [imageHeight]="70"
+                  [imageWidth]="70"
+                  [showUnits]="false"
+                  [showSubtitle]="false"
+                  [outerStrokeWidth]="12"
+                  [innerStrokeWidth]="2"
+                  [outerStrokeColor]="'#4882c2'"
+                  [outerStrokeGradient]="true"
+                  [outerStrokeGradientStopColor]="'#b4cfff'"
+                  [innerStrokeColor]="'#e7e8ea'"
+                  [titleColor]="'#151934'"
+                  [animation]="true"
+                  [animationDuration]="500"
+                ></circle-progress>                                              
+              <a *ngIf="isLogged && isAdmin" routerLink ="/edit_skill/{{ skill.id }}"><i class="bi bi-pen-fill" style="color: #fff; padding: 5px;"></i></a>                        
+              <i *ngIf="isLogged && isAdmin" class="bi bi-trash-fill" style="color: #fff; cursor: pointer" (click)="delete(skill.id)"></i>                  
+    </div>
+    
+</div>
+
+

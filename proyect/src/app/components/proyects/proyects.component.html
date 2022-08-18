@@ -1,0 +1,31 @@
+<div class="row">
+  <h1 id="Projects">Proyectos Realizados</h1>
+  <div class="col-lg-2">
+    <a routerLink="/new_project" *ngIf="isLogged && isAdmin"
+      ><i class="bi bi-plus-square-fill" style="font-size: 2rem"></i
+    ></a>
+  </div>
+  <div class="container" *ngFor="let project of projects">
+    <div class="col-sm-12 col-md-7 col-lg-7" id="descriptionProyect">
+      <h3>{{ project.nameProject }}</h3>
+      <p>{{ project.descriptionProject }}</p>
+    </div>
+    <div
+      class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1"
+      id="imgProyect"
+    >
+      <a href="{{ project.urlProject }}" target="_blank"
+        ><img
+          src="{{ project.imageProject }}"
+          alt=""
+          class="img-fluid"
+          id="img"
+      /></a>
+    </div>
+    <a *ngIf="isLogged && isAdmin" routerLink="/edit_project/{{ project.id }}"
+      ><i class="bi bi-pen-fill" style="color: #fff; font-size: 30px;"></i
+    ></a>
+
+    <i *ngIf="isLogged && isAdmin" class="bi bi-trash-fill" style="color: #fff; cursor: pointer; font-size: 30px; padding: 12px;" (click)="delete(project.id)"></i>
+  </div>
+</div>

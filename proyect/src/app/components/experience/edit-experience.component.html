@@ -1,0 +1,32 @@
+<div class="container" *ngIf="experience">    
+    <h3 style="text-align:center; color: #e2e2e2;">Editar Experiencia: {{experience.work}}</h3>
+    <p style="text-align:center; color: #e2e2e2;">{{experience.descriptionWork}}</p>
+    <div style="display: flex; justify-content: center;">
+        <img src="{{experience.logoBusinessUrl}}" alt="" style="max-width: 80px">
+    </div>
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="work">Trabajo</label>
+                    <input type="text" class="form-control" id="work" name="work" [(ngModel)]="experience.work" required>                    
+                </div>
+                <div class="form-group">
+                    <label for="descriptionWork">Descripción</label>
+                    <input type="text" class="form-control" id="descriptionWork" name="descriptionWork" [(ngModel)]="experience.descriptionWork" required>                    
+                </div>
+                <div class="form-group">
+                    <label for="year">Año</label>
+                    <input type="text" class="form-control" id="year" name="year" [(ngModel)]="experience.year" required>                    
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">URL logo de Empresa</label>
+                    <input type="text" class="form-control" id="logoBusinessUrl" name="logoBusinessUrl" [(ngModel)]="experience.logoBusinessUrl">                    
+                </div>
+                <br>
+                <button class="btn btn-danger" style="margin-right:15px;" (click)="cancel()">Cancelar</button>                
+                <button class="btn btn-primary">Editar Experiencia</button>
+            </form>
+        </div>
+    </div>
+</div>

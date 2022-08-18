@@ -1,0 +1,35 @@
+<div class="row">
+  <h1 id="Education">Educación</h1>
+
+  <div class="col-lg-2">
+    <a routerLink="/new_education" *ngIf="isLogged && isAdmin"
+      ><i class="bi bi-plus-square-fill" style="font-size: 2rem"></i
+    ></a>
+  </div>
+
+  <div class="col-lg-12">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let education of educations">
+          <ul id="block-experience">
+            <td>
+              <li>
+                <img src="{{ education.logoEducationUrl }}" alt="" class="img-fluid" id="img"/>
+                    <h2>{{ education.education }}</h2>
+                     -
+                    <h3>{{ education.year }}</h3>
+              </li>
+                    <p>{{ education.descriptionEducation }}</p>
+            </td>
+            <td *ngIf="isLogged && isAdmin">
+              <a routerLink="/edit_education/{{ education.id }}"><i class="bi bi-pen-fill" style="color: #fff"></i></a>
+            </td>
+            <td *ngIf="isLogged && isAdmin">
+              <i class="bi bi-trash-fill" style="color: #fff; cursor: pointer;" (click)="delete(education.id)"></i>
+            </td>
+          </ul>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

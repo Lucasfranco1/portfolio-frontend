@@ -1,0 +1,18 @@
+<div class="container" *ngIf="person">
+    <h3 style="text-align:center; color: #e2e2e2;">Editar Acerca de mí</h3>
+    <p style="text-align: center; color:#e2e2e2">{{person.about}}</p>
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="about" style="color: #fff;">About Me</label>
+                    <input type="text" class="form-control" id="about" name="about" [(ngModel)]="person.about" required>                    
+                </div>            
+                <br>    
+                   
+                    <button class="btn btn-danger" style="margin-right:15px; align-items: center;" (click)="cancel()">Cancelar</button>                
+                    <button class="btn btn-primary">Editar About Me</button>                                
+            </form>
+        </div>
+    </div>
+</div>

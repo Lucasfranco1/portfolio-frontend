@@ -1,0 +1,26 @@
+<div class="container">
+    <h3 style="text-align:center; color: #e2e2e2;">Nueva Skill</h3>    
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="skill" class="form-label">Skill</label>
+                    <input type="text" class="form-control" id="skill" name="skill" [(ngModel)]="skill" required>                    
+                </div>
+                <br>
+                <div class="form-group" id="slide">
+                    <label for="percentage" class="form-label">Porcentaje de habilidad (0% - 100%)</label>                                    
+                    <input type="range" class="form-range" min="0" max="100" oninput="rangeValue.innerText = this.value" id="percentage" name="percentage" [(ngModel)]="percentage" required>                
+                    <p id="rangeValue" style="font-weight: bold; text-align: center; color: #e2e2e2;">0</p>
+                </div>                
+                <div class="form-group">
+                    <label for="imageUrl" class="form-label">URL logo Skill</label>
+                    <input type="text" class="form-control" id="imageUrl" name="imageUrl" [(ngModel)]="imageUrl">                    
+                </div>
+                <br>
+                <button class="btn btn-danger" style="margin-right:15px;" (click)="cancel()">Cancelar</button>                
+                <button class="btn btn-primary">Añadir Skill</button>
+            </form>
+        </div>
+    </div>    
+</div>

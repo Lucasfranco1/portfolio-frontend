@@ -1,0 +1,29 @@
+<div class="container" *ngIf="skill">    
+    <h3 style="text-align:center; color: #e2e2e2;">Editar Skill: {{ skill.nameSkill }}</h3>
+    <p style="text-align:center; color: #e2e2e2; font-size: 20px;">{{skill.percentSkill}} %</p>
+    <div style="display: flex; justify-content: center;">
+        <img src="{{skill.imageSkill}}" alt="" style="max-width: 100px">
+    </div>
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nameSkill" class="form-label">Skill</label>
+                    <input type="text" class="form-control" id="nameSkill" name="nameSkill" [(ngModel)]="skill.nameSkill" required>                    
+                </div>
+                <div class="form-group">
+                    <label for="percentSkill" class="form-label">Porcentaje de habilidad (0% - 100%)</label>
+                    <input type="range" class="form-range" min="0" max="100" oninput="rangeValue.innerText = this.value" id="percentSkill" name="percentSkill" [(ngModel)]="skill.percentSkill" required>                    
+                    <p id="rangeValue" style="font-weight: bold; text-align: center; color: #e2e2e2;">-</p>
+                </div>                                
+                <div class="form-group">
+                    <label for="imageSkill" class="form-label">URL logo de Skill</label>
+                    <input type="text" class="form-control" id="imageSkill" name="imageSkill" [(ngModel)]="skill.imageSkill">                    
+                </div>
+                <br>
+                <button class="btn btn-danger" style="margin-right:15px;" (click)="cancel()">Cancelar</button>                
+                <button class="btn btn-primary">Editar Skill</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+.link i{
+    width: 20px;    
+    font-size: 20px;    
+}
+ul{
+    list-style: none;
+}
+.link{
+    display: flex;
+    column-gap: 1rem;
+    padding-right: 30px;    
+}
+
+.social{                                                
+   margin-top:20px;  
+   margin-right: 20px;    
+}
+.rounded{
+    margin-top: -10px;    
+    border-radius: 100%; 
+    padding: 0;    
+}
+
+
+@media (max-width:431) {
+    .link{
+        margin-top: -150px;
+        margin-left: 210px;
+    }
+    
+}
+    
+
+@media (max-width:375px) {
+    .link{
+        margin-top: -95px;
+        margin-left: 610px;
+        padding: 10px;
+    }
+    .link i{
+        width: 10px;    
+        font-size: 16px; 
+        padding: 5px;  
+        margin-left: 0px; 
+    }
+    button{
+        font-size: 15px;
+        margin-right: -25px;
+        margin-top: 5px;
+
+        padding: 5px;
+        
+        
+    }
+    
+}
