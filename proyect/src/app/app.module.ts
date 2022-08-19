@@ -96,11 +96,7 @@ import { EditRedSocialComponent } from './components/social-red/edit-red-social.
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
-    ReactiveFormsModule,
-    
-    
-    
-
+    ReactiveFormsModule,            
   ],
   providers: [
     interceptorProvider
