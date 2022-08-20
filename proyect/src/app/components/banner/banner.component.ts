@@ -15,7 +15,14 @@ export class BannerComponent implements OnInit {
   isLogged = false;
   isAdmin = false;
 
+  load = false;  
+
   ngOnInit(): void {   
+  
+    setTimeout(() => {
+      this.load = true;
+     }, 1100);
+     
     this.isLogged = this.token.isLogged();
     this.getPerson();
     this.isAdmin = this.token.isAdmin();     
