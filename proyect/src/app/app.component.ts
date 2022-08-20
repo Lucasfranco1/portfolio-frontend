@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  load = false;
+  
+  ngOnInit(): void {     
+    if(this.load == false){
+      setTimeout(() => {          
+        this.load = true;       
+      }, 4000);      
+    }                
+    
+  }
+  
   title = 'proyect';
 }
