@@ -12,11 +12,10 @@ export class BannerComponent implements OnInit {
 
   person: PersonEntity=new PersonEntity();
   constructor(public personService: PersonService, private token: TokenService) { }
-
   isLogged = false;
   isAdmin = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
     this.isLogged = this.token.isLogged();
     this.getPerson();
     this.isAdmin = this.token.isAdmin();     
