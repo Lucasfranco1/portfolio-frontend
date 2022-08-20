@@ -1,9 +1,11 @@
+
 <div>
     <i routerLink="/edit_banner/{{person.id}}" *ngIf="isLogged && isAdmin" class="bi bi-pen-fill" style="color: green; position: relative; margin-left: 4rem; cursor: pointer; ">Editar Banner</i>    
-    <picture>
+    <div *ngIf="!load" class="d-flex justify-content-center" >    
+        <div class="spinner-border text-light" style="width: 2rem; height: 2rem;" role="status">                  
+        </div>          
+    </div> 
+    <picture *ngIf="load">        
         <img src="{{person.bannerImage}}" alt="" class="img-fluid" style="max-width: 100%">
-    </picture>
-    
-  
-    
+    </picture>          
 </div>
